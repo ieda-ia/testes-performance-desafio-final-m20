@@ -3,12 +3,27 @@ import { sleep, check } from 'k6'
 
 export const options = {  
     stages: [
-    { duration: '10s', target: 10 },
+    { duration: '5s', target: 10 }, // Estratégia de teste SHORT
     { duration: '20s', target: 10 },
-    { duration: '10s', target: 30 },
-    { duration: '20s', target: 30 },
-    { duration: '20s', target: 0 }
+    { duration: '5s', target: 0 }
     
+    // { duration: '30s', target: 50 }, // Estratégia de teste AVERAGELOAD
+    // { duration: '60s', target: 30 },
+    // { duration: '30s', target: 0 }
+
+    // { duration: '50s', target: 100 }, // Estratégia de teste STRESS
+    // { duration: '100s', target: 100 },
+    // { duration: '50s', target: 0 }
+
+    // { duration: '30s', target: 50 }, // Estratégia de teste SOAK
+    // { duration: '1000s', target: 50 },
+    // { duration: '50s', target: 0 }
+    
+    // { duration: '2500s', target: 10000 }, // Estratégia de teste BREAKINGPOINT, 
+    // precisa do threshold http_req_failed: ['rate<0.01']
+    
+    // { duration: '5s', target: 3000 }, // Estratégia de teste SPIKE
+    // { duration: '5s', target: 0 }
   ],
     thresholds: {
         http_req_duration: ['p(90)<2000', 'max<5000'],
