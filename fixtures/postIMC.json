@@ -1,0 +1,7 @@
+{
+    "nomeUsuario": "João Silva",
+    "peso": 70,
+    "altura": 1.75,
+    "idade": 25,
+    "gerarTreino": false
+}
